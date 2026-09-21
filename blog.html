@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Tech'nSyntax</title>
+  <meta name="description" content="Technology insights from Tech'nSyntax on programming, web development, data analytics, AI and career growth.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.technsyntax.site/blog.html">
+  <meta name="theme-color" content="#2563EB">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tech'nSyntax">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Blog — Tech'nSyntax">
+  <meta property="og:description" content="Technology insights from Tech'nSyntax on programming, web development, data analytics, AI and career growth.">
+  <meta property="og:url" content="https://www.technsyntax.site/blog.html">
+  <meta property="og:image" content="https://www.technsyntax.site/images/og/og-image.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Tech'nSyntax Blog">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@TheTechnSyntax">
+  <meta name="twitter:creator" content="@TheTechnSyntax">
+  <meta name="twitter:title" content="Blog — Tech'nSyntax">
+  <meta name="twitter:description" content="Technology insights from Tech'nSyntax on programming, web development, data analytics, AI and career growth.">
+  <meta name="twitter:image" content="https://www.technsyntax.site/images/og/og-image.webp">
+  <meta name="twitter:image:alt" content="Tech'nSyntax Blog">
+
+  <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
+
+  <!-- Structured Data: Blog + BlogPosting + BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Blog",
+        "@id": "https://www.technsyntax.site/blog.html#blog",
+        "name": "Tech'nSyntax Blog",
+        "description": "Notes on programming, web development, analytics, AI and building a career in tech.",
+        "blogPost": [
+          {
+            "@type": "BlogPosting",
+            "headline": "Writing JavaScript That Ages Well",
+            "description": "Small habits that keep vanilla JS codebases readable as they grow."
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "Responsive Design Beyond Breakpoints",
+            "description": "Why fluid layouts often outperform a long list of fixed breakpoints."
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "Dashboards People Actually Open",
+            "description": "Designing business reports around the questions people actually ask."
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "Where AI Automation Actually Pays Off",
+            "description": "A practical framework for spotting tasks worth automating with AI."
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "Breaking Into Tech Without a CS Degree",
+            "description": "What actually moves the needle when you're learning to code later in life."
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "SQL Habits Every Analyst Should Know",
+            "description": "Query patterns that save hours once your datasets start growing."
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.technsyntax.site/blog.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.technsyntax.site/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://www.technsyntax.site/blog.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo" aria-label="Tech'nSyntax Home">
+        <img src="icons/favicon.svg" alt="" class="logo-mark" width="34" height="34">
+        <span>Tech<span class="logo-dot">'n</span>Syntax</span>
+      </a>
+
+      <button class="hamburger" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="primaryNav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="academy.html">Academy</a></li>
+        <li><a href="blog.html" aria-current="page">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta-mobile">
+          <a href="contact.html" class="btn btn--primary btn--full">Start Project</a>
+        </li>
+        <li class="nav-whatsapp-mobile">
+          <a href="https://wa.me/919309011037" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp btn--full" aria-label="Chat on WhatsApp +91 93090 11037">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            <span>WhatsApp: +91 93090 11037</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="https://wa.me/919309011037" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp-icon" aria-label="Chat on WhatsApp +91 93090 11037" title="WhatsApp: +91 93090 11037">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        </a>
+        <a href="contact.html" class="btn btn--primary btn--sm">Start Project</a>
+      </div>
+    </div>
+    <div class="nav-overlay" aria-hidden="true"></div>
+  </header>
+
+  <main id="main">
+    <!-- Breadcrumb -->
+    <div class="container breadcrumb-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <a href="index.html">Home</a> / <span>Blog</span>
+      </nav>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-header container" aria-labelledby="blog-hero-title">
+      <span class="eyebrow">blog.posts</span>
+      <h1 id="blog-hero-title">Technology Blog</h1>
+      <p class="section-head">Notes on programming, web development, analytics, AI and building a career in tech.</p>
+    </section>
+
+    <!-- Filter Bar -->
+    <section class="section" style="padding-top: 0;" aria-label="Articles Feed">
+      <div class="container">
+        <div class="blog-filter" role="toolbar" aria-label="Filter blog posts by category">
+          <button type="button" class="filter-btn" data-category="all" aria-pressed="true">All</button>
+          <button type="button" class="filter-btn" data-category="programming" aria-pressed="false">Programming</button>
+          <button type="button" class="filter-btn" data-category="web-development" aria-pressed="false">Web Development</button>
+          <button type="button" class="filter-btn" data-category="analytics" aria-pressed="false">Analytics</button>
+          <button type="button" class="filter-btn" data-category="ai" aria-pressed="false">AI</button>
+          <button type="button" class="filter-btn" data-category="career" aria-pressed="false">Career</button>
+        </div>
+
+        <!-- Live announcement for screen readers -->
+        <div class="sr-only js-blog-count" aria-live="polite">Showing 6 articles in all categories.</div>
+
+        <!-- Blog Grid -->
+        <div class="grid blog-grid">
+          <!-- Post 1: Programming -->
+          <article class="card blog-card reveal reveal-delay-1" data-category="programming">
+            <a href="blog-javascript-that-ages-well.html" tabindex="-1" aria-hidden="true" style="display: block;">
+              <div class="img-wrap" style="aspect-ratio: 16/10;">
+                <img src="images/blog/blog-1.webp" alt="JavaScript programming habits cover illustration" width="600" height="375" loading="lazy">
+              </div>
+            </a>
+            <div style="margin-top: var(--space-4); display: flex; flex-direction: column; flex: 1;">
+              <span class="pill" style="align-self: flex-start;">Programming</span>
+              <h2 style="font-size: 1.25rem; margin-top: var(--space-2); margin-bottom: var(--space-2);">
+                <a href="blog-javascript-that-ages-well.html" style="color: inherit; text-decoration: none;">Writing JavaScript That Ages Well</a>
+              </h2>
+              <p>Small habits that keep vanilla JS codebases readable as they grow.</p>
+              <div class="blog-meta" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                <span>5 min read &middot; Tech'nSyntax Team</span>
+                <a href="blog-javascript-that-ages-well.html" class="card-link" style="color: var(--color-primary); font-weight: 600; text-decoration: none; font-size: 0.85rem;">Read Article &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Post 2: Web Development -->
+          <article class="card blog-card reveal reveal-delay-2" data-category="web-development">
+            <a href="blog-responsive-design-beyond-breakpoints.html" tabindex="-1" aria-hidden="true" style="display: block;">
+              <div class="img-wrap" style="aspect-ratio: 16/10;">
+                <img src="images/blog/blog-2.webp" alt="Responsive web design cover illustration" width="600" height="375" loading="lazy">
+              </div>
+            </a>
+            <div style="margin-top: var(--space-4); display: flex; flex-direction: column; flex: 1;">
+              <span class="pill" style="align-self: flex-start;">Web Development</span>
+              <h2 style="font-size: 1.25rem; margin-top: var(--space-2); margin-bottom: var(--space-2);">
+                <a href="blog-responsive-design-beyond-breakpoints.html" style="color: inherit; text-decoration: none;">Responsive Design Beyond Breakpoints</a>
+              </h2>
+              <p>Why fluid layouts often outperform a long list of fixed breakpoints.</p>
+              <div class="blog-meta" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                <span>6 min read &middot; Tech'nSyntax Team</span>
+                <a href="blog-responsive-design-beyond-breakpoints.html" class="card-link" style="color: var(--color-primary); font-weight: 600; text-decoration: none; font-size: 0.85rem;">Read Article &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Post 3: Analytics -->
+          <article class="card blog-card reveal reveal-delay-3" data-category="analytics">
+            <a href="blog-dashboards-people-actually-open.html" tabindex="-1" aria-hidden="true" style="display: block;">
+              <div class="img-wrap" style="aspect-ratio: 16/10;">
+                <img src="images/blog/blog-3.webp" alt="Analytics dashboards cover illustration" width="600" height="375" loading="lazy">
+              </div>
+            </a>
+            <div style="margin-top: var(--space-4); display: flex; flex-direction: column; flex: 1;">
+              <span class="pill" style="align-self: flex-start;">Analytics</span>
+              <h2 style="font-size: 1.25rem; margin-top: var(--space-2); margin-bottom: var(--space-2);">
+                <a href="blog-dashboards-people-actually-open.html" style="color: inherit; text-decoration: none;">Dashboards People Actually Open</a>
+              </h2>
+              <p>Designing business reports around the questions people actually ask.</p>
+              <div class="blog-meta" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                <span>4 min read &middot; Tech'nSyntax Team</span>
+                <a href="blog-dashboards-people-actually-open.html" class="card-link" style="color: var(--color-primary); font-weight: 600; text-decoration: none; font-size: 0.85rem;">Read Article &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Post 4: AI -->
+          <article class="card blog-card reveal reveal-delay-1" data-category="ai">
+            <a href="blog-where-ai-automation-pays-off.html" tabindex="-1" aria-hidden="true" style="display: block;">
+              <div class="img-wrap" style="aspect-ratio: 16/10;">
+                <img src="images/blog/blog-4.webp" alt="AI automation cover illustration" width="600" height="375" loading="lazy">
+              </div>
+            </a>
+            <div style="margin-top: var(--space-4); display: flex; flex-direction: column; flex: 1;">
+              <span class="pill" style="align-self: flex-start;">AI</span>
+              <h2 style="font-size: 1.25rem; margin-top: var(--space-2); margin-bottom: var(--space-2);">
+                <a href="blog-where-ai-automation-pays-off.html" style="color: inherit; text-decoration: none;">Where AI Automation Actually Pays Off</a>
+              </h2>
+              <p>A practical framework for spotting tasks worth automating with AI.</p>
+              <div class="blog-meta" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                <span>7 min read &middot; Tech'nSyntax Team</span>
+                <a href="blog-where-ai-automation-pays-off.html" class="card-link" style="color: var(--color-primary); font-weight: 600; text-decoration: none; font-size: 0.85rem;">Read Article &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Post 5: Career -->
+          <article class="card blog-card reveal reveal-delay-2" data-category="career">
+            <a href="blog-breaking-into-tech-without-cs-degree.html" tabindex="-1" aria-hidden="true" style="display: block;">
+              <div class="img-wrap" style="aspect-ratio: 16/10;">
+                <img src="images/blog/blog-5.webp" alt="Career in technology cover illustration" width="600" height="375" loading="lazy">
+              </div>
+            </a>
+            <div style="margin-top: var(--space-4); display: flex; flex-direction: column; flex: 1;">
+              <span class="pill" style="align-self: flex-start;">Career</span>
+              <h2 style="font-size: 1.25rem; margin-top: var(--space-2); margin-bottom: var(--space-2);">
+                <a href="blog-breaking-into-tech-without-cs-degree.html" style="color: inherit; text-decoration: none;">Breaking Into Tech Without a CS Degree</a>
+              </h2>
+              <p>What actually moves the needle when you're learning to code later in life.</p>
+              <div class="blog-meta" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                <span>5 min read &middot; Tech'nSyntax Team</span>
+                <a href="blog-breaking-into-tech-without-cs-degree.html" class="card-link" style="color: var(--color-primary); font-weight: 600; text-decoration: none; font-size: 0.85rem;">Read Article &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Post 6: Programming -->
+          <article class="card blog-card reveal reveal-delay-3" data-category="programming">
+            <a href="blog-sql-habits-every-analyst-should-know.html" tabindex="-1" aria-hidden="true" style="display: block;">
+              <div class="img-wrap" style="aspect-ratio: 16/10;">
+                <img src="images/blog/blog-6.webp" alt="SQL query patterns cover illustration" width="600" height="375" loading="lazy">
+              </div>
+            </a>
+            <div style="margin-top: var(--space-4); display: flex; flex-direction: column; flex: 1;">
+              <span class="pill" style="align-self: flex-start;">Programming</span>
+              <h2 style="font-size: 1.25rem; margin-top: var(--space-2); margin-bottom: var(--space-2);">
+                <a href="blog-sql-habits-every-analyst-should-know.html" style="color: inherit; text-decoration: none;">SQL Habits Every Analyst Should Know</a>
+              </h2>
+              <p>Query patterns that save hours once your datasets start growing.</p>
+              <div class="blog-meta" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                <span>6 min read &middot; Tech'nSyntax Team</span>
+                <a href="blog-sql-habits-every-analyst-should-know.html" class="card-link" style="color: var(--color-primary); font-weight: 600; text-decoration: none; font-size: 0.85rem;">Read Article &rarr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" aria-label="Tech'nSyntax Home">
+            <img src="icons/favicon.svg" alt="" class="logo-mark" width="30" height="30">
+            <span>Tech<span class="logo-dot">'n</span>Syntax</span>
+          </a>
+          <p class="footer-tagline">Digital transformation services and practical technical education for growing businesses.</p>
+          <div class="social-links" aria-label="Social media profiles">
+            <a href="https://www.facebook.com/TechnSyntax" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/TechnSyntax" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.x.com/TheTechnSyntax" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X (formerly Twitter)"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            <a href="https://www.youtube.com/@TechnSyntax" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/company/TechnSyntax" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="https://www.reddit.com/r/TheTechnSyntax" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Reddit"><i class="fa-brands fa-reddit-alien" aria-hidden="true"></i></a>
+            <a href="https://TheTechnSyntax.quora.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Quora"><i class="fa-brands fa-quora" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-zone">
+          <h4 class="footer-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-zone">
+          <h4 class="footer-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="service-web-development.html">Web Development</a></li>
+            <li><a href="service-data-analytics.html">Data Analytics</a></li>
+            <li><a href="service-ai-solutions.html">AI Solutions</a></li>
+            <li><a href="service-digital-services.html">Digital Services</a></li>
+            <li><a href="service-technical-training.html">Technical Training</a></li>
+            <li><a href="service-ui-ux-design.html">UI/UX Design</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-zone">
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="#" class="js-email" data-user="info" data-domain="technsyntax.site">info@technsyntax.site</a>
+            </li>
+            <li>Remote-first, worldwide</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span class="js-current-year">2026</span> Tech'nSyntax. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <span>&bull;</span>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

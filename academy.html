@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech'nSyntax Academy — Technical Training</title>
+  <meta name="description" content="Tech'nSyntax Academy offers practical courses in web development, data analytics, SQL, Power BI, AI tools and UI/UX design, with certification.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.technsyntax.site/academy.html">
+  <meta name="theme-color" content="#2563EB">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tech'nSyntax">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Tech'nSyntax Academy — Technical Training">
+  <meta property="og:description" content="Practical, instructor-built courses that turn technical curiosity into real, usable skill. Learn web development, data analytics, SQL, Power BI, and AI.">
+  <meta property="og:url" content="https://www.technsyntax.site/academy.html">
+  <meta property="og:image" content="https://www.technsyntax.site/images/og/og-image.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Tech'nSyntax Academy">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@TheTechnSyntax">
+  <meta name="twitter:creator" content="@TheTechnSyntax">
+  <meta name="twitter:title" content="Tech'nSyntax Academy — Technical Training">
+  <meta name="twitter:description" content="Practical, instructor-built courses that turn technical curiosity into real, usable skill. Learn web development, data analytics, SQL, Power BI, and AI.">
+  <meta name="twitter:image" content="https://www.technsyntax.site/images/og/og-image.webp">
+  <meta name="twitter:image:alt" content="Tech'nSyntax Academy">
+
+  <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
+
+  <!-- Structured Data: ItemList of Course + BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ItemList",
+        "@id": "https://www.technsyntax.site/academy.html#courses",
+        "name": "Tech'nSyntax Academy Learning Paths & Courses",
+        "description": "Practical technical education courses taught by industry practitioners.",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Course",
+              "name": "Web Development Path",
+              "description": "HTML, CSS and JavaScript fundamentals through to responsive, real-world builds.",
+              "image": "https://www.technsyntax.site/images/academy/academy-web.webp",
+              "educationalCredentialAwarded": "Tech'nSyntax Certificate of Completion",
+              "provider": {
+                "@type": "Organization",
+                "name": "Tech'nSyntax Academy",
+                "url": "https://www.technsyntax.site/academy.html"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Course",
+              "name": "Data & Analytics Path",
+              "description": "SQL, data cleaning and Power BI dashboards for business-ready reporting.",
+              "image": "https://www.technsyntax.site/images/academy/academy-analytics.webp",
+              "educationalCredentialAwarded": "Tech'nSyntax Certificate of Completion",
+              "provider": {
+                "@type": "Organization",
+                "name": "Tech'nSyntax Academy",
+                "url": "https://www.technsyntax.site/academy.html"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Course",
+              "name": "AI Tools Path",
+              "description": "Practical use of AI tools for automation and everyday productivity.",
+              "image": "https://www.technsyntax.site/images/academy/academy-ai.webp",
+              "educationalCredentialAwarded": "Tech'nSyntax Certificate of Completion",
+              "provider": {
+                "@type": "Organization",
+                "name": "Tech'nSyntax Academy",
+                "url": "https://www.technsyntax.site/academy.html"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.technsyntax.site/academy.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.technsyntax.site/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Academy",
+            "item": "https://www.technsyntax.site/academy.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo" aria-label="Tech'nSyntax Home">
+        <img src="icons/favicon.svg" alt="" class="logo-mark" width="34" height="34">
+        <span>Tech<span class="logo-dot">'n</span>Syntax</span>
+      </a>
+
+      <button class="hamburger" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="primaryNav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="academy.html" aria-current="page">Academy</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta-mobile">
+          <a href="contact.html" class="btn btn--primary btn--full">Start Project</a>
+        </li>
+        <li class="nav-whatsapp-mobile">
+          <a href="https://wa.me/919309011037" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp btn--full" aria-label="Chat on WhatsApp +91 93090 11037">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            <span>WhatsApp: +91 93090 11037</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="https://wa.me/919309011037" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp-icon" aria-label="Chat on WhatsApp +91 93090 11037" title="WhatsApp: +91 93090 11037">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        </a>
+        <a href="contact.html" class="btn btn--primary btn--sm">Start Project</a>
+      </div>
+    </div>
+    <div class="nav-overlay" aria-hidden="true"></div>
+  </header>
+
+  <main id="main">
+    <!-- Breadcrumb -->
+    <div class="container breadcrumb-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <a href="index.html">Home</a> / <span>Academy</span>
+      </nav>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-header container" aria-labelledby="academy-hero-title">
+      <span class="eyebrow">academy.enroll()</span>
+      <h1 id="academy-hero-title">Tech'nSyntax Academy</h1>
+      <p class="section-head">Practical, instructor-built courses that turn technical curiosity into real, usable skill.</p>
+    </section>
+
+    <!-- Learning Paths Section -->
+    <section class="section" aria-labelledby="learning-paths-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">learning paths</span>
+          <h2 id="learning-paths-title">Choose a path, not just a course</h2>
+        </div>
+
+        <div class="grid grid--3">
+          <!-- Path 1: Web Development -->
+          <article class="card reveal reveal-delay-1">
+            <div class="img-wrap" style="aspect-ratio: 16/10; margin-bottom: var(--space-4);">
+              <img src="images/academy/academy-web.webp" alt="Web Development Learning Path interactive curriculum at Tech'nSyntax Academy" width="600" height="375" loading="lazy">
+            </div>
+            <span class="pill">Beginner &rarr; Intermediate</span>
+            <h3 class="card-title">Web Development Path</h3>
+            <p>HTML, CSS and JavaScript fundamentals through to responsive, real-world builds.</p>
+            <div style="margin-top: var(--space-4);">
+              <a href="contact.html" class="card-link">Enroll in Path &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Path 2: Data & Analytics -->
+          <article class="card reveal reveal-delay-2">
+            <div class="img-wrap" style="aspect-ratio: 16/10; margin-bottom: var(--space-4);">
+              <img src="images/academy/academy-analytics.webp" alt="Data and Analytics Learning Path Power BI and SQL dashboards at Tech'nSyntax Academy" width="600" height="375" loading="lazy">
+            </div>
+            <span class="pill">Beginner &rarr; Advanced</span>
+            <h3 class="card-title">Data &amp; Analytics Path</h3>
+            <p>SQL, data cleaning and Power BI dashboards for business-ready reporting.</p>
+            <div style="margin-top: var(--space-4);">
+              <a href="contact.html" class="card-link">Enroll in Path &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Path 3: AI Tools -->
+          <article class="card reveal reveal-delay-3">
+            <div class="img-wrap" style="aspect-ratio: 16/10; margin-bottom: var(--space-4);">
+              <img src="images/academy/academy-ai.webp" alt="AI Tools and Workflow Automation Learning Path at Tech'nSyntax Academy" width="600" height="375" loading="lazy">
+            </div>
+            <span class="pill">Intermediate</span>
+            <h3 class="card-title">AI Tools Path</h3>
+            <p>Practical use of AI tools for automation and everyday productivity.</p>
+            <div style="margin-top: var(--space-4);">
+              <a href="contact.html" class="card-link">Enroll in Path &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- All Courses Section -->
+    <section class="section" aria-labelledby="courses-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">courses</span>
+          <h2 id="courses-title">Individual Skill Modules</h2>
+        </div>
+
+        <div class="grid academy-courses-grid">
+          <!-- Course 1 -->
+          <div class="card reveal reveal-delay-1">
+            <h3 class="card-title">Web Development</h3>
+            <p>Build responsive, production-ready websites from scratch.</p>
+          </div>
+
+          <!-- Course 2 -->
+          <div class="card reveal reveal-delay-2">
+            <h3 class="card-title">Data Analytics</h3>
+            <p>Clean, structure and analyze real business datasets.</p>
+          </div>
+
+          <!-- Course 3 -->
+          <div class="card reveal reveal-delay-3">
+            <h3 class="card-title">SQL</h3>
+            <p>Query, join and manage relational data with confidence.</p>
+          </div>
+
+          <!-- Course 4 -->
+          <div class="card reveal reveal-delay-1">
+            <h3 class="card-title">Power BI</h3>
+            <p>Design dashboards that turn data into decisions.</p>
+          </div>
+
+          <!-- Course 5 -->
+          <div class="card reveal reveal-delay-2">
+            <h3 class="card-title">AI Tools</h3>
+            <p>Apply AI tools to automate everyday tasks and workflows.</p>
+          </div>
+
+          <!-- Course 6 -->
+          <div class="card reveal reveal-delay-3">
+            <h3 class="card-title">UI/UX Design</h3>
+            <p>Design usable, well-structured interfaces people enjoy using.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section" aria-labelledby="benefits-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">why train with us</span>
+          <h2 id="benefits-title">Benefits of the Academy</h2>
+        </div>
+
+        <div class="grid grid--4">
+          <div class="card value-card reveal reveal-delay-1">
+            <span class="card-index">01</span>
+            <h3 class="card-title">Practitioner instructors</h3>
+            <p>Taught by people who use these tools in real client work.</p>
+          </div>
+
+          <div class="card value-card reveal reveal-delay-2">
+            <span class="card-index">02</span>
+            <h3 class="card-title">Project-based learning</h3>
+            <p>Every course ends with something real you've built.</p>
+          </div>
+
+          <div class="card value-card reveal reveal-delay-3">
+            <span class="card-index">03</span>
+            <h3 class="card-title">Small cohorts</h3>
+            <p>Direct feedback instead of passive video-watching.</p>
+          </div>
+
+          <div class="card value-card reveal reveal-delay-4">
+            <span class="card-index">04</span>
+            <h3 class="card-title">Flexible scheduling</h3>
+            <p>Evening and weekend tracks for working professionals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certification Section -->
+    <section class="section" aria-labelledby="certification-title">
+      <div class="container grid certification-wrap">
+        <div class="reveal">
+          <span class="eyebrow">certification</span>
+          <h2 id="certification-title">A certificate that reflects real work, not attendance</h2>
+          <p>Every learning path ends with a project review. Pass it, and you receive a Tech'nSyntax Certificate of Completion you can add to your portfolio or resume.</p>
+          <div style="margin-top: var(--space-6);">
+            <a href="contact.html" class="btn btn--primary">Enroll Now</a>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-2">
+          <div class="certificate-mock" aria-label="Certificate of Completion preview">
+            <div class="img-wrap" style="aspect-ratio: 16/10; border-radius: var(--radius-md); overflow: hidden; margin-bottom: var(--space-3);">
+              <img src="images/academy/academy-cert.webp" alt="Tech'nSyntax Academy Certificate of Completion official verified capstone credential" width="600" height="375" loading="lazy">
+            </div>
+            <div class="certificate-title">Certificate of Completion</div>
+            <p style="font-size: 0.85rem; color: var(--color-muted); max-width: 280px; margin: 0 auto;">Awarded upon successful completion and review of a capstone technical project.</p>
+            <div class="certificate-badge">Tech'nSyntax Academy Verified</div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" aria-label="Tech'nSyntax Home">
+            <img src="icons/favicon.svg" alt="" class="logo-mark" width="30" height="30">
+            <span>Tech<span class="logo-dot">'n</span>Syntax</span>
+          </a>
+          <p class="footer-tagline">Digital transformation services and practical technical education for growing businesses.</p>
+          <div class="social-links" aria-label="Social media profiles">
+            <a href="https://www.facebook.com/TechnSyntax" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/TechnSyntax" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.x.com/TheTechnSyntax" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X (formerly Twitter)"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            <a href="https://www.youtube.com/@TechnSyntax" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/company/TechnSyntax" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="https://www.reddit.com/r/TheTechnSyntax" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Reddit"><i class="fa-brands fa-reddit-alien" aria-hidden="true"></i></a>
+            <a href="https://TheTechnSyntax.quora.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Quora"><i class="fa-brands fa-quora" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-zone">
+          <h4 class="footer-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-zone">
+          <h4 class="footer-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="service-web-development.html">Web Development</a></li>
+            <li><a href="service-data-analytics.html">Data Analytics</a></li>
+            <li><a href="service-ai-solutions.html">AI Solutions</a></li>
+            <li><a href="service-digital-services.html">Digital Services</a></li>
+            <li><a href="service-technical-training.html">Technical Training</a></li>
+            <li><a href="service-ui-ux-design.html">UI/UX Design</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-zone">
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="#" class="js-email" data-user="info" data-domain="technsyntax.site">info@technsyntax.site</a>
+            </li>
+            <li>Remote-first, worldwide</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span class="js-current-year">2026</span> Tech'nSyntax. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <span>&bull;</span>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

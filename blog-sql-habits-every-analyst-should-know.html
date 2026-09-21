@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Habits Every Analyst Should Know — Tech'nSyntax Blog</title>
+  <meta name="description" content="Query patterns that save hours once datasets start growing. Learn CTEs, window functions, SARGable filters, and clean schema practices.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.technsyntax.site/blog-sql-habits-every-analyst-should-know.html">
+  <meta name="theme-color" content="#2563EB">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Tech'nSyntax">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="SQL Habits Every Analyst Should Know — Tech'nSyntax Blog">
+  <meta property="og:description" content="Query patterns that save hours once datasets start growing. Learn CTEs, window functions, SARGable filters, and clean schema practices.">
+  <meta property="og:url" content="https://www.technsyntax.site/blog-sql-habits-every-analyst-should-know.html">
+  <meta property="og:image" content="https://www.technsyntax.site/images/blog/blog-6.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Relational database schema diagrams and optimized SQL queries">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@TheTechnSyntax">
+  <meta name="twitter:creator" content="@TheTechnSyntax">
+  <meta name="twitter:title" content="SQL Habits Every Analyst Should Know — Tech'nSyntax Blog">
+  <meta name="twitter:description" content="Query patterns that save hours once datasets start growing. Learn CTEs, window functions, SARGable filters, and clean schema practices.">
+  <meta name="twitter:image" content="https://www.technsyntax.site/images/blog/blog-6.webp">
+  <meta name="twitter:image:alt" content="Relational database schema diagrams and optimized SQL queries">
+
+  <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
+
+  <!-- Structured Data: BlogPosting + BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://www.technsyntax.site/blog-sql-habits-every-analyst-should-know.html#article",
+        "headline": "SQL Habits Every Analyst Should Know",
+        "description": "Query patterns that save hours once your datasets start growing.",
+        "image": "https://www.technsyntax.site/images/blog/blog-6.webp",
+        "datePublished": "2026-09-21",
+        "dateModified": "2026-09-21",
+        "author": {
+          "@type": "Organization",
+          "name": "Tech'nSyntax Data Engineering Team",
+          "url": "https://www.technsyntax.site/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tech'nSyntax",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.technsyntax.site/icons/favicon.svg"
+          }
+        },
+        "mainEntityOfPage": "https://www.technsyntax.site/blog-sql-habits-every-analyst-should-know.html"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.technsyntax.site/blog-sql-habits-every-analyst-should-know.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.technsyntax.site/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://www.technsyntax.site/blog.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "SQL Habits Every Analyst Should Know",
+            "item": "https://www.technsyntax.site/blog-sql-habits-every-analyst-should-know.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo" aria-label="Tech'nSyntax Home">
+        <img src="icons/favicon.svg" alt="" class="logo-mark" width="34" height="34">
+        <span>Tech<span class="logo-dot">'n</span>Syntax</span>
+      </a>
+
+      <button class="hamburger" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="primaryNav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="academy.html">Academy</a></li>
+        <li><a href="blog.html" aria-current="page">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta-mobile">
+          <a href="contact.html" class="btn btn--primary btn--full">Start Project</a>
+        </li>
+        <li class="nav-whatsapp-mobile">
+          <a href="https://wa.me/919309011037" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp btn--full" aria-label="Chat on WhatsApp +91 93090 11037">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            <span>WhatsApp: +91 93090 11037</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="https://wa.me/919309011037" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp-icon" aria-label="Chat on WhatsApp +91 93090 11037" title="WhatsApp: +91 93090 11037">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        </a>
+        <a href="contact.html" class="btn btn--primary btn--sm">Start Project</a>
+      </div>
+    </div>
+    <div class="nav-overlay" aria-hidden="true"></div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container article-layout">
+      <!-- Breadcrumb -->
+      <nav aria-label="Breadcrumb" class="breadcrumb" style="margin-bottom: var(--space-4);">
+        <a href="index.html">Home</a> / <a href="blog.html">Blog</a> / <span>SQL Habits Every Analyst Should Know</span>
+      </nav>
+
+      <!-- Article Header -->
+      <header class="article-header">
+        <span class="pill">Programming</span>
+        <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin-top: var(--space-2);">SQL Habits Every Analyst Should Know</h1>
+        <p style="font-size: 1.15rem; color: var(--color-muted); line-height: 1.6;">Query patterns that save hours once your datasets start growing into millions of rows.</p>
+        
+        <div class="article-meta">
+          <span>By <strong>Tech'nSyntax Data Engineering Team</strong></span>
+          <span>&bull;</span>
+          <time datetime="2026-09-21">September 21, 2026</time>
+          <span>&bull;</span>
+          <span>6 min read</span>
+        </div>
+      </header>
+
+      <!-- Featured Image -->
+      <div class="article-featured-img">
+        <img src="images/blog/blog-6.webp" alt="Relational database schema diagrams and optimized SQL queries" width="1200" height="675" loading="eager">
+      </div>
+
+      <!-- Article Body -->
+      <article class="article-body">
+        <p>Structured Query Language (SQL) has outlived dozens of "revolutionary" database paradigms. From NoSQL document stores to graph engines, SQL remains the universal lingua franca of data. When you are querying a table with 5,000 rows in SQLite or PostgreSQL, virtually any syntactically valid query executes in milliseconds. Bad habits go unnoticed.</p>
+
+        <p>However, when your company's data grows into millions of transaction records across Snowflake, BigQuery, or Amazon Redshift, inefficient query habits become catastrophic: multi-minute timeouts, skyrocketing warehouse compute invoices, and spaghetti code that nobody dares refactor. Here are five SQL patterns that separate amateur querying from professional data engineering.</p>
+
+        <h2>1. Replace Deeply Nested Subqueries with CTEs</h2>
+        <p>Nested subqueries inside <code>FROM</code> clauses are difficult to read, impossible to test in isolation, and obscure query intent. Common Table Expressions (<code>WITH ... AS</code>) structure your query like a logical, top-to-bottom pipeline.</p>
+
+        <div class="code-editor" style="margin: var(--space-6) 0;">
+          <div class="code-editor__topbar">
+            <div class="code-editor__dots" aria-hidden="true">
+              <span class="code-editor__dot code-editor__dot--red"></span>
+              <span class="code-editor__dot code-editor__dot--yellow"></span>
+              <span class="code-editor__dot code-editor__dot--green"></span>
+            </div>
+            <span class="code-editor__tab">cte-pipeline.sql</span>
+          </div>
+          <div class="code-editor__body">
+            <pre class="font-mono" style="font-size: 0.85rem; line-height: 1.6; color: #f8fafc;"><code><span class="syn-cmt">-- Clear, modular, and easy to debug each step independently</span>
+<span class="syn-kw">WITH</span> active_customers <span class="syn-kw">AS</span> (
+  <span class="syn-kw">SELECT</span> customer_id, signup_date, country
+  <span class="syn-kw">FROM</span> customers
+  <span class="syn-kw">WHERE</span> status = <span class="syn-str">'active'</span>
+),
+recent_orders <span class="syn-kw">AS</span> (
+  <span class="syn-kw">SELECT</span> 
+    customer_id,
+    <span class="syn-fn">SUM</span>(total_amount) <span class="syn-kw">AS</span> total_spend,
+    <span class="syn-fn">COUNT</span>(order_id) <span class="syn-kw">AS</span> order_count
+  <span class="syn-kw">FROM</span> orders
+  <span class="syn-kw">WHERE</span> order_date >= <span class="syn-str">'2026-01-01'</span>
+  <span class="syn-kw">GROUP BY</span> customer_id
+)
+<span class="syn-kw">SELECT</span> 
+  c.customer_id,
+  c.country,
+  <span class="syn-fn">COALESCE</span>(o.total_spend, 0) <span class="syn-kw">AS</span> ltv_2026,
+  <span class="syn-fn">COALESCE</span>(o.order_count, 0) <span class="syn-kw">AS</span> orders_2026
+<span class="syn-kw">FROM</span> active_customers c
+<span class="syn-kw">LEFT JOIN</span> recent_orders o <span class="syn-kw">ON</span> c.customer_id = o.customer_id
+<span class="syn-kw">ORDER BY</span> ltv_2026 <span class="syn-kw">DESC</span>;</code></pre>
+          </div>
+        </div>
+
+        <div class="article-callout">
+          <p><strong>Debugging Tip:</strong> When troubleshooting a CTE, simply change the final <code>SELECT * FROM active_customers</code> to inspect intermediate state before proceeding to subsequent joins.</p>
+        </div>
+
+        <h2>2. Master Window Functions for Complex Analytics</h2>
+        <p>Before window functions, calculating running totals, month-over-month growth, or finding the "most recent record per user" required convoluted self-joins or multiple passes over the dataset. Window functions execute over partitions without collapsing rows.</p>
+
+        <ul>
+          <li><code>ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY order_date DESC)</code>: Perfect for deduplicating or finding each customer's latest order.</li>
+          <li><code>LAG(revenue, 1) OVER (ORDER BY order_month)</code>: Instantly computes month-over-month percentage changes without joining the table to itself.</li>
+          <li><code>SUM(amount) OVER (PARTITION BY account_id ORDER BY transaction_date)</code>: Builds a continuous running balance in a single execution sweep.</li>
+        </ul>
+
+        <h2>3. Write SARGable Filters (Protect Your Indexes)</h2>
+        <p>A query is "SARGable" (Search Argument Able) when the database query planner can utilize an index on a column. The moment you wrap an indexed column in a function, the optimizer is forced to perform a full table scan, checking every single row individually.</p>
+
+        <div class="code-editor" style="margin: var(--space-6) 0;">
+          <div class="code-editor__topbar">
+            <div class="code-editor__dots" aria-hidden="true">
+              <span class="code-editor__dot code-editor__dot--red"></span>
+              <span class="code-editor__dot code-editor__dot--yellow"></span>
+              <span class="code-editor__dot code-editor__dot--green"></span>
+            </div>
+            <span class="code-editor__tab">sargable-performance.sql</span>
+          </div>
+          <div class="code-editor__body">
+            <pre class="font-mono" style="font-size: 0.85rem; line-height: 1.6; color: #f8fafc;"><code><span class="syn-cmt">-- Non-SARGable: Scans millions of rows (Index ignored)</span>
+<span class="syn-kw">SELECT</span> * <span class="syn-kw">FROM</span> audit_logs 
+<span class="syn-kw">WHERE</span> <span class="syn-fn">DATE</span>(created_at) = <span class="syn-str">'2026-09-21'</span>;
+
+<span class="syn-cmt">-- SARGable: Uses B-Tree index on created_at (Instant lookup)</span>
+<span class="syn-kw">SELECT</span> id, user_id, action, created_at <span class="syn-kw">FROM</span> audit_logs 
+<span class="syn-kw">WHERE</span> created_at >= <span class="syn-str">'2026-09-21 00:00:00'</span> 
+  <span class="syn-kw">AND</span> created_at < <span class="syn-str">'2026-09-22 00:00:00'</span>;</code></pre>
+          </div>
+        </div>
+
+        <h2>4. Ban SELECT * in Production Queries</h2>
+        <p><code>SELECT *</code> is convenient during interactive exploration in a scratch terminal. But leaving it in production reporting views, dashboards, or ETL scripts has severe consequences:</p>
+
+        <ul>
+          <li><strong>Network and I/O Waste:</strong> Transfers unused text columns or heavy JSON blobs across the wire.</li>
+          <li><strong>Bypasses Covering Indexes:</strong> If an index includes columns <code>(id, status, created_at)</code>, selecting only those columns requires zero reads from the primary heap table.</li>
+          <li><strong>Fragility to Schema Changes:</strong> If a team member adds or reorders columns in the upstream table, downstream consumers may fail silently or assign data to wrong positional fields.</li>
+        </ul>
+
+        <h2>5. Explicitly Guard Against NULL Gotchas</h2>
+        <p>In SQL three-valued logic, <code>NULL</code> represents unknown, not zero or false. Expressions like <code>NULL = NULL</code> evaluate to <code>UNKNOWN</code>, not true. When aggregating or filtering:</p>
+
+        <ul>
+          <li>Always use <code>COALESCE(column, 0)</code> when doing arithmetic or financial totals to prevent a single NULL from rendering the entire sum NULL.</li>
+          <li>Remember that <code>NOT IN (SELECT ...)</code> will return zero rows if the subquery returns even one single <code>NULL</code>. Prefer <code>NOT EXISTS</code> instead.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>Writing performant SQL is less about memorizing obscure dialect syntax and more about cultivating discipline: explicit projections, modular CTE structure, window partitioning, and respecting database index mechanics. Your queries will run faster, your cloud bills will shrink, and your teammates will thank you.</p>
+
+        <!-- Author Card -->
+        <div class="article-author-card">
+          <div class="article-author-avatar">TS</div>
+          <div class="article-author-info">
+            <h4>Tech'nSyntax Data Engineering Team</h4>
+            <p>We design enterprise data warehouses, automated ETL pipelines, and high-performance SQL analytics architectures.</p>
+          </div>
+        </div>
+
+        <!-- Article Navigation -->
+        <div class="article-nav">
+          <a href="blog-breaking-into-tech-without-cs-degree.html" class="card" style="text-decoration: none;">
+            <span class="eyebrow">&larr; Previous Article</span>
+            <h4 style="font-size: 1.1rem; color: var(--color-dark);">Breaking into Tech Without a CS Degree</h4>
+            <p style="font-size: 0.85rem; margin-bottom: 0;">What actually moves the needle when learning to code later in life.</p>
+          </a>
+          <a href="blog.html" class="card" style="text-decoration: none;">
+            <span class="eyebrow">Back to Archive &rarr;</span>
+            <h4 style="font-size: 1.1rem; color: var(--color-dark);">Technology Blog Archive</h4>
+            <p style="font-size: 0.85rem; margin-bottom: 0;">Browse our full collection of articles on development, data, and AI.</p>
+          </a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" aria-label="Tech'nSyntax Home">
+            <img src="icons/favicon.svg" alt="" class="logo-mark" width="30" height="30">
+            <span>Tech<span class="logo-dot">'n</span>Syntax</span>
+          </a>
+          <p class="footer-tagline">Digital transformation services and practical technical education for growing businesses.</p>
+          <div class="social-links" aria-label="Social media profiles">
+            <a href="https://www.facebook.com/TechnSyntax" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/TechnSyntax" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.x.com/TheTechnSyntax" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X (formerly Twitter)"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            <a href="https://www.youtube.com/@TechnSyntax" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/company/TechnSyntax" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="https://www.reddit.com/r/TheTechnSyntax" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Reddit"><i class="fa-brands fa-reddit-alien" aria-hidden="true"></i></a>
+            <a href="https://TheTechnSyntax.quora.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Quora"><i class="fa-brands fa-quora" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-zone">
+          <h4 class="footer-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-zone">
+          <h4 class="footer-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="service-web-development.html">Web Development</a></li>
+            <li><a href="service-data-analytics.html">Data Analytics</a></li>
+            <li><a href="service-ai-solutions.html">AI Solutions</a></li>
+            <li><a href="service-digital-services.html">Digital Services</a></li>
+            <li><a href="service-technical-training.html">Technical Training</a></li>
+            <li><a href="service-ui-ux-design.html">UI/UX Design</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-zone">
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="#" class="js-email" data-user="info" data-domain="technsyntax.site">info@technsyntax.site</a>
+            </li>
+            <li>Remote-first, worldwide</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span class="js-current-year">2026</span> Tech'nSyntax. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <span>&bull;</span>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

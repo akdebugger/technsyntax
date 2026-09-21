@@ -1,0 +1,180 @@
+/* ==========================================================================
+   Tech'nSyntax — Responsive Stylesheet
+   Mobile-First: Min-width media queries only (768px, 960px, 1200px).
+   Never write desktop-first and shrink.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Tablet Breakpoint (768px+)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .section {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  /* Grid adaptations */
+  .grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Service Rows (Alternating Layout) */
+  .service-row {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+  }
+
+  .service-row:nth-child(even) .img-wrap {
+    order: 2;
+  }
+
+  /* Hero & CTA Actions */
+  .hero-actions {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-4);
+  }
+
+  .hero-actions .btn {
+    width: auto;
+  }
+
+  .cta-band {
+    padding: var(--space-16) var(--space-10);
+  }
+
+  /* Footer 2 columns at tablet */
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Figures side by side on About */
+  .about-figures {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Certification card */
+  .certification-wrap {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Desktop Navigation & Split Switch (960px+)
+   -------------------------------------------------------------------------- */
+@media (min-width: 960px) {
+  /* Navigation Bar */
+  .hamburger {
+    display: none;
+  }
+
+  .nav-overlay {
+    display: none !important;
+  }
+
+  .nav-links {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-6);
+    padding: 0;
+    box-shadow: none;
+    border-bottom: none;
+    max-height: none;
+    overflow: visible;
+    background: transparent;
+  }
+
+  .nav-links a {
+    padding: var(--space-2) 0;
+    font-size: 0.9375rem;
+  }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .nav-cta-mobile,
+  .nav-whatsapp-mobile {
+    display: none !important;
+  }
+
+  /* Hero 2-column split */
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: var(--space-12);
+  }
+
+  /* About Story 2-column split */
+  .about-story-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: var(--space-12);
+  }
+
+  /* Contact Page 2-column layout */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    align-items: flex-start;
+    gap: var(--space-8);
+  }
+
+  /* Footer 4 columns */
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1.2fr 1.3fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Wide Desktop (1200px+)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1200px) {
+  .grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .academy-courses-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .blog-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 420px 1fr;
+    gap: var(--space-10);
+  }
+}
