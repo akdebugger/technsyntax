@@ -6,7 +6,7 @@
 (function () {
   "use strict";
 
-  const N8N_WEBHOOK_URL = "https://anaskhannothing.app.n8n.cloud/webhook/technsyntax-chat";
+  const N8N_WEBHOOK_URL = "https://n8n.technsyntax.site/webhook/technsyntax-chat";
   const SESSION_STORAGE_KEY = "technsyntax_chat_session";
   const HISTORY_STORAGE_KEY = "technsyntax_chat_history";
   const MAX_HISTORY = 50;
