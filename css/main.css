@@ -59,7 +59,7 @@
   --syn-kw: #38BDF8;
   --syn-str: #34D399;
   --syn-fn: #FBBF24;
-  --syn-cmt: #64748B;
+  --syn-cmt: #94A3B8;
   --syn-prop: #E2E8F0;
 }
 
@@ -949,6 +949,9 @@ p:last-child {
   font-weight: 700;
   color: var(--color-dark);
   line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+  min-width: 3.5ch;
+  display: inline-block;
 }
 
 .hero-stat-label {
@@ -1550,7 +1553,7 @@ p:last-child {
   flex-direction: column;
   gap: var(--space-2);
   font-size: 0.8125rem;
-  color: #64748B;
+  color: #94A3B8;
 }
 
 /* --------------------------------------------------------------------------
@@ -1770,6 +1773,21 @@ p:last-child {
   grid-template-columns: 1fr;
   gap: var(--space-8);
   align-items: center;
+}
+
+.service-hero-grid .img-wrap {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  contain: layout paint;
+}
+
+.service-hero-grid .img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (min-width: 960px) {

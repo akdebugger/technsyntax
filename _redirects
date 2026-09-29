@@ -1,0 +1,29 @@
+# ==============================================================================
+# Tech'nSyntax — Cloudflare / Netlify Redirect Rules
+# ==============================================================================
+
+# 1. Canonical Host Redirect: Non-WWW to WWW (301 Permanent)
+https://technsyntax.site/* https://www.technsyntax.site/:splat 301!
+
+# 2. Redirect legacy .html to clean URLs (301 Permanent)
+/index.html                           /                              301!
+/about.html                           /about                         301!
+/services.html                        /services                      301!
+/portfolio.html                       /portfolio                     301!
+/academy.html                         /academy                       301!
+/blog.html                            /blog                          301!
+/contact.html                         /contact                       301!
+/privacy.html                         /privacy                       301!
+/terms.html                           /terms                         301!
+/service-web-development.html         /service-web-development       301!
+/service-data-analytics.html          /service-data-analytics        301!
+/service-ai-solutions.html            /service-ai-solutions          301!
+/service-digital-services.html        /service-digital-services      301!
+/service-technical-training.html      /service-technical-training    301!
+/service-ui-ux-design.html            /service-ui-ux-design          301!
+/blog-breaking-into-tech-without-cs-degree.html /blog-breaking-into-tech-without-cs-degree 301!
+/blog-dashboards-people-actually-open.html     /blog-dashboards-people-actually-open     301!
+/blog-javascript-that-ages-well.html           /blog-javascript-that-ages-well           301!
+/blog-responsive-design-beyond-breakpoints.html /blog-responsive-design-beyond-breakpoints 301!
+/blog-sql-habits-every-analyst-should-know.html /blog-sql-habits-every-analyst-should-know 301!
+/blog-where-ai-automation-pays-off.html        /blog-where-ai-automation-pays-off        301!

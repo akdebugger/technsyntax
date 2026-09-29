@@ -48,6 +48,16 @@
   will-change: opacity, transform;
 }
 
+/* Ensure above-the-fold hero content is visible immediately to optimize LCP */
+.hero .reveal,
+.page-header .reveal,
+.hero-copy,
+.hero-copy.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
