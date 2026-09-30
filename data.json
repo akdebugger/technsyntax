@@ -1,0 +1,45 @@
+{
+  "success": true,
+  "users": [
+    {
+      "id": 1,
+      "name": "Priya Sharma",
+      "email": "priya@example.com",
+      "age": 22,
+      "city": "Mumbai",
+      "role": "Student"
+    },
+    {
+      "id": 2,
+      "name": "Rahul Verma",
+      "email": "rahul@example.com",
+      "age": 25,
+      "city": "Delhi",
+      "role": "Developer"
+    },
+    {
+      "id": 3,
+      "name": "Ananya Singh",
+      "email": "ananya@example.com",
+      "age": 24,
+      "city": "Pune",
+      "role": "Designer"
+    },
+    {
+      "id": 4,
+      "name": "Amit Patel",
+      "email": "amit@example.com",
+      "age": 28,
+      "city": "Ahmedabad",
+      "role": "Manager"
+    },
+    {
+      "id": 5,
+      "name": "Neha Gupta",
+      "email": "neha@example.com",
+      "age": 23,
+      "city": "Bengaluru",
+      "role": "Developer"
+    }
+  ]
+}
